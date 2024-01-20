@@ -1,0 +1,44 @@
+{
+    "name": "jdw5/artisan-endpoints",
+    "description": "Custom Laravel Artisan commands to reduce boilerplate",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Jdw5\\ArtisanEndpoints\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jdw5",
+            "email": "josh@joshua-wallace.com",
+            "homepage": "https://joshua-wallace.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jdw5\\ArtisanEndpoints\\ArtisanEndpointsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require": {
+        "php": "^8.1.0",
+        "illuminate/support": "^10.41",
+        "illuminate/filesystem": "^10.41",
+        "illuminate/console": "^10.41"
+    },
+    "require-dev": {
+        "laravel/pint": "dev-main",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.28",
+        "phpstan/phpstan": "^1.10"
+    }
+}
