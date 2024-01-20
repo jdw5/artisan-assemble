@@ -45,3 +45,6 @@ This will create a new enum class at the given namespace within the `App\Enums` 
 
 ### `make:filter {name}`
 This will create a new filter class at the given namespace within the `App\Filters` directory. Filters are used for pipelining operations, particularly for handling query parameters.
+
+### `make:lib {name}`
+Creates a Javascript/Typescript
