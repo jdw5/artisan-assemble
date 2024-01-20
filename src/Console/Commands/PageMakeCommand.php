@@ -1,6 +1,6 @@
 <?php
 
-namespace Jdw5\ArtisanEndpoints\Console\Commands;
+namespace Jdw5\ArtisanAssemble\Console\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;

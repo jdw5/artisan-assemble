@@ -1,18 +1,18 @@
-# Artisan Endpoints
+# Artisan Assemble
 
 Custom stubs and make commands for Laravel's artisan CLI.
 
 ## Installation
 ```console
-composer require --dev jdw5/artisan-endpoints
+composer require --dev jdw5/artisan-assemble
 ```
 
 Once installed, you should publish the configuration file to customise your stubs by publishing them. This is also required to change the default page/modal stubs to use your own components - and change from Vue to react.
 ```console
-php artisan vendor:publish --tag=artisan-endpoints
+php artisan vendor:publish --tag=artisan-assemble
 ```
 
-In the published `config/artisan-endpoints.php` file, you can select the file extension that should be used for your page/modal routes. By default, this is set to `.vue` but you can change this to whatever you require - just be sure to update the stubs accordingly.
+In the published `config/artisan-assemble.php` file, you can select the file extension that should be used for your page/modal routes. By default, this is set to `.vue` but you can change this to whatever you require - just be sure to update the stubs accordingly.
 
 ## Available Commands
 
