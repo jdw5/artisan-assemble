@@ -1,0 +1,21 @@
+<?php
+
+namespace {{ namespace }};
+
+use Laravel\Scout\Builder;
+use Illuminate\Http\Request;
+
+class {{ class }}
+{
+    public function __construct(protected Request $request) {}
+    
+    public function handle(Builder $builder, \Closure $next)
+    {
+        return $next($builder)
+            ->when($this->request->has('search'),
+                function ($query) => {
+                    // ...
+                }
+            );
+    }
+}
