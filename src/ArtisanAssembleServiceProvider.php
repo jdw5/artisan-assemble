@@ -11,8 +11,6 @@ use Jdw5\ArtisanAssemble\Console\Commands\HashMakeCommand;
 use Jdw5\ArtisanAssemble\Console\Commands\ModalMakeCommand;
 use Jdw5\ArtisanAssemble\Console\Commands\PageMakeCommand;
 
-// use Illuminate\Foundation\Console\AboutCommand;
-
 class ArtisanAssembleServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
@@ -41,6 +39,14 @@ class ArtisanAssembleServiceProvider extends ServiceProvider implements Deferrab
                 ModalMakeCommand::class,
                 PageMakeCommand::class,    
             ]);
+
+            $this->publishes([
+                __DIR__.'/Console/Commands' => app_path('Console/Commands'),
+            ], 'assemble-commands');
+
+            $this->publishes([
+                __DIR__.'/../stubs' => base_path('stubs/vendor/assemble'),
+            ], 'assemble-stubs');
         }
     }
 
@@ -51,5 +57,6 @@ class ArtisanAssembleServiceProvider extends ServiceProvider implements Deferrab
      */
     public function provides()
     {
+        //
     }
 }
