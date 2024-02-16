@@ -4,6 +4,7 @@ namespace Jdw5\ArtisanAssemble;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
+
 use Jdw5\ArtisanAssemble\Console\Commands\EndpointMakeCommand;
 use Jdw5\ArtisanAssemble\Console\Commands\EnumMakeCommand;
 use Jdw5\ArtisanAssemble\Console\Commands\FilterMakeCommand;
@@ -30,24 +31,26 @@ class ArtisanAssembleServiceProvider extends ServiceProvider implements Deferrab
      */
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                EndpointMakeCommand::class,
-                EnumMakeCommand::class,
-                FilterMakeCommand::class,
-                HashMakeCommand::class,
-                ModalMakeCommand::class,
-                PageMakeCommand::class,    
-            ]);
-
-            $this->publishes([
-                __DIR__.'/Console/Commands' => app_path('Console/Commands'),
-            ], 'assemble-commands');
-
-            $this->publishes([
-                __DIR__.'/../stubs' => base_path('stubs/vendor/assemble'),
-            ], 'assemble-stubs');
+        if (! $this->app->runningInConsole()) {
+            return;
         }
+
+        $this->commands([
+            EndpointMakeCommand::class,
+            EnumMakeCommand::class,
+            FilterMakeCommand::class,
+            HashMakeCommand::class,
+            ModalMakeCommand::class,
+            PageMakeCommand::class,    
+        ]);
+
+        $this->publishes([
+            __DIR__.'/Console/Commands' => app_path('Console/Commands'),
+        ], 'assemble-commands');
+
+        $this->publishes([
+            __DIR__.'/../stubs' => base_path('stubs/vendor/assemble'),
+        ], 'assemble-stubs');
     }
 
     /**
@@ -57,6 +60,13 @@ class ArtisanAssembleServiceProvider extends ServiceProvider implements Deferrab
      */
     public function provides()
     {
-        //
+        return [
+            EndpointMakeCommand::class,
+            EnumMakeCommand::class,
+            FilterMakeCommand::class,
+            HashMakeCommand::class,
+            ModalMakeCommand::class,
+            PageMakeCommand::class,
+        ];
     }
 }
