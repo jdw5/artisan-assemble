@@ -49,7 +49,7 @@ class ArtisanAssembleServiceProvider extends ServiceProvider implements Deferrab
         ], 'assemble-commands');
 
         $this->publishes([
-            __DIR__.'/../stubs' => base_path('stubs/vendor/assemble'),
+            __DIR__.'/../stubs' => base_path('stubs'),
         ], 'assemble-stubs');
     }
 
