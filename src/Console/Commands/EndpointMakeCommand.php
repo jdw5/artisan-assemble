@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Artisan;
 
 class EndpointMakeCommand extends Command
 {
-    const REQUEST_NAMESPACE = 'App\\Http\\Requests';
+    const REQUEST_NAMESPACE = 'App\\Http\\Requests\\';
     const MODAL_BASEROUTE = 'dashboard';
     /**
      * The name and signature of the console command.
