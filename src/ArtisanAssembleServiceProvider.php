@@ -32,15 +32,6 @@ class ArtisanAssembleServiceProvider extends ServiceProvider implements Deferrab
      */
     public function boot()
     {
-        
-
-        // AboutCommand::add('My Package', fn () => ['Version' => '1.0.0']);
-
-        $this->publishes([
-            __DIR__.'/config/artisan-assemble.php' => config_path('artisan-assemble.php'),
-            // __DIR__.'../stubs/' => stub_path('artisan-assemble.php'),
-        ]);
-
         if ($this->app->runningInConsole()) {
             $this->commands([
                 EndpointMakeCommand::class,
