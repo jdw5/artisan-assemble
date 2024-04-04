@@ -1,5 +1,5 @@
 <template>
-    <Head title="New Page"></Head>
+    <Head title="New Page" />
 
     <!-- ... -->
 

@@ -86,7 +86,7 @@ class EndpointMakeCommand extends Command
 
             $this->replaceInFile(
                 '//',
-                "return Inertia::render('".$vue."',[\n\t\t\t\n\t\t]);",
+                "return Inertia::render('".$vue."', [\n\t\t\t\n\t\t]);",
                 $controllerPath
             );
         }
@@ -107,6 +107,7 @@ class EndpointMakeCommand extends Command
 
     protected function buildPath(string $path, string $file)
     {
+        if ($path === '') return $file;
         return $path . '/' . $file;
     }
 

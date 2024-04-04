@@ -1,16 +1,21 @@
 <template>
     <Head title="New Page"></Head>
-
-    <!-- ... -->
-
+    <Form @submit.prevent="onSubmit">
+        <!-- ... -->
+        <div>
+            <PrimaryButton type="submit">
+                Create
+            </PrimaryButton>
+        </div>
+    </Form>
 </template>
 
 <script setup>
 import { Head, useForm } from '@inertiajs/vue3';
 import { ref } from 'vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
-import SecondaryButton from '@/Components/Buttons/SecondaryButton.vue';
-import PrimaryButton from '@/Components/Buttons/PrimaryButton.vue';
+import { PrimaryButton, SecondaryButton } from '@/Components/Button
+import { Form, Field } from '@/Components/Form'
 
 defineOptions({ layout: MainLayout })
 
@@ -22,7 +27,7 @@ const form = useForm({
     // ...
 })
 
-const submit = () => {
+const onSubmit = () => {
     form.submit(route(''), {
         onSuccess: () => {
             close()
