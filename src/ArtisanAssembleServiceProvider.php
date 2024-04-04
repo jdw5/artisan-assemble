@@ -6,9 +6,6 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
 use Jdw5\ArtisanAssemble\Console\Commands\EndpointMakeCommand;
-use Jdw5\ArtisanAssemble\Console\Commands\EnumMakeCommand;
-use Jdw5\ArtisanAssemble\Console\Commands\FilterMakeCommand;
-use Jdw5\ArtisanAssemble\Console\Commands\HashMakeCommand;
 use Jdw5\ArtisanAssemble\Console\Commands\ModalMakeCommand;
 use Jdw5\ArtisanAssemble\Console\Commands\PageMakeCommand;
 
@@ -37,9 +34,6 @@ class ArtisanAssembleServiceProvider extends ServiceProvider implements Deferrab
 
         $this->commands([
             EndpointMakeCommand::class,
-            EnumMakeCommand::class,
-            FilterMakeCommand::class,
-            HashMakeCommand::class,
             ModalMakeCommand::class,
             PageMakeCommand::class,    
         ]);
@@ -62,9 +56,6 @@ class ArtisanAssembleServiceProvider extends ServiceProvider implements Deferrab
     {
         return [
             EndpointMakeCommand::class,
-            EnumMakeCommand::class,
-            FilterMakeCommand::class,
-            HashMakeCommand::class,
             ModalMakeCommand::class,
             PageMakeCommand::class,
         ];
