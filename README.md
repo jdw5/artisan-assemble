@@ -37,14 +37,5 @@ This will create a new page using your specified or the default stub at the give
 ### `make:modal {name}`
 This will create a new modal using your specified or the default stub at the given namespace.
 
-### `make:hash {name}`
-This is a shorthand command to create hash casts for your models to obfuscate IDs (usually).
-
-### `make:enum {name}`
-This will create a new enum class at the given namespace within the `App\Enums` directory.
-
-### `make:filter {name}`
-This will create a new filter class at the given namespace within the `App\Filters` directory. Filters are used for pipelining operations, particularly for handling query parameters.
-
 <!-- ### `make:lib {name}`
 Creates a Javascript/Typescript -->
